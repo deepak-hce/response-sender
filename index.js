@@ -71,7 +71,7 @@ app.use("/*", (req, res) => {
   }
 });
 
-http.listen(port, () => {
+http.listen(process.env.port || port, () => {
   console.log(`response sender app listening on port ${port}`);
   console.log(os.hostname());
 });
