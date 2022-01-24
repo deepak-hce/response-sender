@@ -47,7 +47,10 @@ io.on("connection", (socket) => {
   });
 });
 
-app.use("/*", (req, res) => {
+const html = __dirname + '/frontend/dist/response-sender-client';
+
+app.use("/api/*", (req, res) => {
+  console.log('Got new request..')
   const obj = {
     path: req.baseUrl,
     requestMethod: req.method,
@@ -57,6 +60,8 @@ app.use("/*", (req, res) => {
     headers: req.headers,
   };
   if (socketInstance) {
+  console.log('Got new request..')
+
     const id = uniqueId();
 
     const requestObj = {
@@ -71,7 +76,16 @@ app.use("/*", (req, res) => {
   }
 });
 
-http.listen(process.env.port || port, () => {
+
+// Static content
+app.use(express.static(html))
+// Default route
+app.use('/', function(req, res) {
+  res.sendFile(html + '/index.html');
+})
+
+
+http.listen(port, () => {
   console.log(`response sender app listening on port ${port}`);
   console.log(os.hostname());
 });

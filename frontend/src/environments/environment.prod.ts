@@ -1,4 +1,4 @@
 export const environment = {
-  socketPort: 'localhost:3000',
+  socketPort: '',
   production: true,
 };
