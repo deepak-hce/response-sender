@@ -1,0 +1,24 @@
+<div
+    class="ras-h-full ras-w-full ras-flex ras-justify-center ras-items-center backdrop-image"
+    (click)="$event.stopPropagation(); closeMe()"
+>
+    <div
+        class="ras-h-2/4 ras-w-2/4 ras-backdrop-blur ras-bg-white/30 ras-rounded-lg ras-overflow-hidden"
+        (click)="$event.stopPropagation()"
+    >
+        <div class="ras-h-full ras-w-full">
+            <button
+                (click)="closeMe()"
+                class="ras-bg-red-600 ras-text-white ras-py-2 ras-px-4 ras-rounded-md ras-m-2"
+            >
+                closeMe
+            </button>
+            <button
+                (click)="addMore()"
+                class="ras-bg-green-700 ras-text-white ras-py-2 ras-px-4 ras-rounded-md ras-m-2"
+            >
+                AddMore
+            </button>
+        </div>
+    </div>
+</div>
