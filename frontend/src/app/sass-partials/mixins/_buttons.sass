@@ -1,0 +1,25 @@
+
+@mixin btn-variables-mixin($color, $text)
+    --buttonColor: var(--#{$color})
+    --buttonText: var(--#{$text})
+    
+
+// FILLED Button START
+.ras-btn-filled
+    --buttonBgOpacity: 1
+    background-color: rgba(var(--buttonColor), var(--buttonBgOpacity))
+    color: rgb(var(--buttonText))
+    border-color: rgb(var(--buttonColor))
+
+// FILLED Button END
+
+
+// STROKED Button START
+.ras-btn-stroked
+    --buttonBgOpacity: 0
+    background-color: rgba(var(--buttonText), var(--buttonBgOpacity))
+    color: rgb(var(--buttonColor))
+    border-color: rgb(var(--buttonColor))
+
+// STROKED Button END
+    

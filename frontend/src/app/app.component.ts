@@ -4,7 +4,7 @@ import { environment } from 'src/environments/environment';
 import { ModalService } from './modal/service/modal/modal.service';
 
 @Component({
-    selector: 'app-root',
+    selector: 'ras-root',
     templateUrl: './app.component.html',
     styleUrls: ['./app.component.sass'],
 })

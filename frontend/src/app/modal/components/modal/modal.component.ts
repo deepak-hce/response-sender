@@ -3,7 +3,7 @@ import { DomInjectedData } from 'src/app/base/class/dom/dom-injected-data';
 import { ModalService } from '../../service/modal/modal.service';
 
 @Component({
-    selector: 'app-modal',
+    selector: 'ras-modal',
     templateUrl: './modal.component.html',
     styleUrls: ['./modal.component.sass'],
 })

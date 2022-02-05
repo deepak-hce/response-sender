@@ -1,11 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { EButtonColorType } from 'src/app/base/enum/button/e-button-color-type';
+import { EButtonType } from 'src/app/base/enum/button/e-button-type';
 
 @Component({
-    selector: 'app-button',
+    selector: 'ras-button',
     templateUrl: './button.component.html',
     styleUrls: ['./button.component.sass'],
 })
 export class ButtonComponent implements OnInit {
+    buttonType: EButtonType = EButtonType.FILLED;
+    buttonColorType: EButtonColorType = EButtonColorType.DARK;
+
+    EButtonColorType = EButtonColorType;
+    EButtonType = EButtonType;
+
     constructor() {}
 
     ngOnInit(): void {}
