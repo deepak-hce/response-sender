@@ -1,4 +1,4 @@
 export const environment = {
-  socketPort: '',
-  production: true,
+    socketPort: '',
+    production: true,
 };

@@ -1,0 +1,25 @@
+@mixin card-variable-mixin($color)
+    --cardColor: var(--#{$color})
+
+    
+.ras-card
+    --shadowOpacity: 0.3
+    --headOpacity: 0.2
+    --footOpacity: 0.2
+    --bodyOpacity: 0.1
+    --shadowColor: var(--darkVar)
+    box-shadow: 0px 5px 10px -1px rgba(var(--shadowColor), var(--shadowOpacity))
+    border-color: rgb(var(--cardColor))
+
+    &.is-simple-banner
+        box-shadow: none
+        color: rgb(var(--cardColor))
+
+    .ras-card-head
+        background-color: rgba(var(--cardColor), var(--headOpacity))
+
+    .ras-card-body
+        background-color: rgba(var(--cardColor), var(--bodyOpacity))
+
+    .ras-card-foot
+        background-color: rgba(var(--cardColor), var(--footOpacity))
