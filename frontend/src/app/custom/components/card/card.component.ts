@@ -9,7 +9,7 @@ import { CardHeadDirective } from '../../directive/card/card-head.directive';
     styleUrls: ['./card.component.sass'],
 })
 export class CardComponent implements OnInit {
-    @Input('isSimpleTextBanner') isSimpleTextBanner: boolean = false;
+    @Input('isSimpleBanner') isSimpleBanner: boolean = false;
 
     @ContentChild(CardHeadDirective)
     cardHeadTemplate: CardHeadDirective | any;
