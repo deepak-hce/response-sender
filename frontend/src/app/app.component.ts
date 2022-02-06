@@ -9,6 +9,9 @@ import { ModalService } from './modal/service/modal/modal.service';
     styleUrls: ['./app.component.sass'],
 })
 export class AppComponent implements OnInit {
+    // To view only Ui samples used
+    showOnlyUiSamples: boolean = false;
+
     title = 'response-sender-client';
     requests: any = {};
     filteredRequests: any = {};
@@ -17,7 +20,7 @@ export class AppComponent implements OnInit {
     searchText = '';
     objectKeys = Object.keys;
 
-    constructor(private modalService: ModalService) {}
+    constructor() {}
 
     ngOnInit() {
         this.socketInstance = io(environment.socketPort, {
@@ -59,9 +62,5 @@ export class AppComponent implements OnInit {
         this.filteredRequests = Object.keys(this.requests).find((key) =>
             this.requests[key].includes(this.searchText)
         );
-    }
-
-    openModal() {
-        this.modalService.openModal({});
     }
 }

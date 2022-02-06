@@ -1,13 +1,25 @@
 <div
-    class="ras-h-full ras-w-full ras-flex ras-justify-center ras-items-center ras-backdrop-blur ras-bg-black/30"
-    (click)="$event.stopPropagation(); closeMe()"
+    class="ras-h-full ras-w-full ras-flex ras-justify-center ras-items-center ras-backdrop-blur ras-bg-black/70"
+    (click)="$event.stopPropagation(); closeModal()"
 >
     <div
-        class="ras-h-2/4 ras-w-2/4 ras-rounded-lg ras-overflow-hidden ras-bg-white"
+        class="ras-rounded-lg ras-overflow-hidden ras-bg-light"
+        [style.height]="height"
+        [style.width]="width"
         (click)="$event.stopPropagation()"
     >
         <div class="ras-h-full ras-w-full">
-            <!-- TODO: Add modal component here -->
+            <ng-container *ngIf="activeResolvedComponentIndex >= 0">
+                <ng-container
+                    *ngComponentOutlet="
+                        resolvedComponents[activeResolvedComponentIndex]
+                            .component;
+                        injector: resolvedComponents[
+                            activeResolvedComponentIndex
+                        ].injector
+                    "
+                ></ng-container>
+            </ng-container>
         </div>
     </div>
 </div>

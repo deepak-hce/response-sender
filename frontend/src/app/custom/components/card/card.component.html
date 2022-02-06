@@ -1,0 +1,29 @@
+<div
+    class="ras-card ras-m-4 ras-rounded-md ras-overflow-hidden ras-border ras-border-solid ras-card-{{
+        cardColorType
+    }}"
+    [class.is-text-banner]="isSimpleTextBanner"
+>
+    <div
+        class="ras-card-head ras-p-3"
+        *ngIf="cardHeadTemplate && cardHeadTemplate.templateRef"
+    >
+        <ng-container
+            [ngTemplateOutlet]="cardHeadTemplate.templateRef"
+        ></ng-container>
+    </div>
+
+    <div class="ras-card-body ras-px-3 ras-py-4">
+        <ng-content></ng-content>
+    </div>
+
+    <div
+        *ngIf="cardFootTemplate && cardFootTemplate.templateRef"
+        class="ras-card-foot ras-p-3"
+        [ngClass]="cardFootTemplate.extraClass"
+    >
+        <ng-container
+            [ngTemplateOutlet]="cardFootTemplate.templateRef"
+        ></ng-container>
+    </div>
+</div>

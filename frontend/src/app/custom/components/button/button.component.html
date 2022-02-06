@@ -1,7 +1,8 @@
 <button
-    class="ras-py-1 ras-px-3 ras-rounded ras-text-base ras-border ras-border-solid ras-btn-{{
+    class="ras-py-1 ras-px-3 ras-rounded ras-text-base ras-border ras-border-solid ras-ease-linear ras-duration-200 ras-btn-{{
         buttonType
     }} ras-btn-{{ buttonColorType }}"
+    (click)="clicked.emit($event)"
 >
     <span class="ras-mx-1">
         <ng-content></ng-content>
