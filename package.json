@@ -5,9 +5,9 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index",
-		"heroku-postbuild": "cd frontend && npm install && npm run build"
+		"heroku-postbuild": "cd frontend && npm install && npm install --save-dev && npm run build"
 	},
-  "engines": {
+	"engines": {
 		"node": "14.18.1",
 		"npm": "6.14.15"
 	},

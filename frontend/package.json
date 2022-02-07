@@ -10,8 +10,6 @@
     },
     "private": true,
     "dependencies": {
-        "@angular/cli": "~12.1.1",
-        "@angular/compiler-cli": "~12.1.1",
         "@angular/animations": "~12.1.1",
         "@angular/common": "~12.1.1",
         "@angular/compiler": "~12.1.1",
@@ -28,6 +26,8 @@
     },
     "devDependencies": {
         "@angular-devkit/build-angular": "~12.1.1",
+        "@angular/cli": "~12.1.1",
+        "@angular/compiler-cli": "~12.1.1",
         "@types/jasmine": "~3.6.0",
         "@types/node": "^12.11.1",
         "angular-cli-ghpages": "^1.0.0",
