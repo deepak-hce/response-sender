@@ -63,4 +63,8 @@ export class AppComponent implements OnInit {
             this.requests[key].includes(this.searchText)
         );
     }
+
+    onchangeSample() {
+        this.showOnlyUiSamples = !this.showOnlyUiSamples;
+    }
 }
