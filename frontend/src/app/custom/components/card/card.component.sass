@@ -1,28 +1,31 @@
+@import ./../../../sass-partials/mixins/_host
 @import ./../../../sass-partials/mixins/_cards
 
+@include host-type-inline-block
 
 .rasc-card-primary
-    @include card-variable-mixin($color: primaryVar)
+    @include card-variable-mixin($color: primary)
     
 .rasc-card-secondary
-    @include card-variable-mixin($color: secondaryVar)
+    @include card-variable-mixin($color: secondary)
     
 .rasc-card-success
-    @include card-variable-mixin($color: successVar)
+    @include card-variable-mixin($color: success)
     
 .rasc-card-warning
-    @include card-variable-mixin($color: warningVar)
+    @include card-variable-mixin($color: warning)
     
 .rasc-card-danger
-    @include card-variable-mixin($color: dangerVar)
+    @include card-variable-mixin($color: danger)
     
 .rasc-card-info
-    @include card-variable-mixin($color: infoVar)
+    @include card-variable-mixin($color: info)
     
 .rasc-card-light
-    --lightCardVar: 180, 180, 180
-    @include card-variable-mixin($color: lightCardVar)
+    --lightCardVar: 0, 0%
+    --lightCardLightness: 70%
+    @include card-variable-mixin($color: lightCard)
     
 .rasc-card-dark
-    @include card-variable-mixin($color: darkVar)
+    @include card-variable-mixin($color: dark)
     

@@ -9,12 +9,14 @@ import { ModalModule } from './modal/modal.module';
 import { UiSamplesComponent } from './components/test/ui-samples/ui-samples.component';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
 import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { IconDirective } from './directive/icon.directive';
+import { CardUiSamplesComponent } from './components/test/card-ui-samples/card-ui-samples.component';
+import { CustomFormsModule } from './custom-forms/custom-forms.module';
+import { SharedModule } from './shared/shared.module';
 
-const directives = [IconDirective];
+const components = [UiSamplesComponent, CardUiSamplesComponent];
 
 @NgModule({
-    declarations: [AppComponent, UiSamplesComponent, ...directives],
+    declarations: [AppComponent, ...components],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -27,6 +29,8 @@ const directives = [IconDirective];
         // Custom
         CustomModule,
         ModalModule,
+        CustomFormsModule,
+        SharedModule,
     ],
     providers: [],
     bootstrap: [AppComponent],

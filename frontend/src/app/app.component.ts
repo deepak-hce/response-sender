@@ -11,10 +11,6 @@ import { EIconSize } from './base/enum/icon/e-icon-size';
     styleUrls: ['./app.component.sass'],
 })
 export class AppComponent implements OnInit {
-    icon: IIcon = {
-        icon: RasFaIcons.faKey,
-        size: EIconSize._10x,
-    };
     // To view only Ui samples used
     showOnlyUiSamples: boolean = true;
 

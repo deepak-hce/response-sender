@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { EIconSize } from 'src/app/base/enum/icon/e-icon-size';
+import { IIcon } from 'src/app/base/interface/icon/i-icon';
+import { RasFaIcons } from 'src/app/constants/fa-library';
 import { ModalService } from 'src/app/modal/service/modal/modal.service';
 
 @Component({
@@ -7,6 +10,10 @@ import { ModalService } from 'src/app/modal/service/modal/modal.service';
     styleUrls: ['./ui-samples.component.sass'],
 })
 export class UiSamplesComponent implements OnInit {
+    icon: IIcon = {
+        icon: RasFaIcons.faKey,
+        size: EIconSize._4x,
+    };
     constructor(private modalService: ModalService) {}
 
     ngOnInit(): void {}

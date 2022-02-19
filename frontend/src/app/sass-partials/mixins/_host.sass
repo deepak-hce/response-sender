@@ -1,0 +1,14 @@
+@mixin host-type-inline-block
+    :host
+        display: inline-block
+
+@mixin host-type-inline
+    :host
+        display: inline
+
+@mixin host-type-flex($justifyContent: center, $alignItems: center)
+    :host
+        display: flex
+        justify-content: $justifyContent
+        align-items: $alignItems
+         

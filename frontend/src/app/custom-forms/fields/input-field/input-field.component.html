@@ -1,0 +1,18 @@
+<label class="ras-text-sm ras-font-semibold ras-leading-tight ras-mb-2"
+    >Input Field</label
+>
+<div
+    class="ras-flex ras-justify-start ras-items-center ras-w-full ras-rounded ras-overflow-hidden ras-border ras-border-solid ras-border-light-300"
+>
+    <ng-container *ngIf="prefixIcon">
+        <div
+            class="ras-flex ras-justify-center ras-items-center ras-px-3 ras-h-10 ras-border-r ras-border-solid ras-border-light-300 ras-bg-light-300 ras-text-dark-default"
+        >
+            <ng-template rasIcon [icon]="prefixIcon"></ng-template>
+        </div>
+    </ng-container>
+    <input
+        class="ras-flex-1 ras-text-sm ras-font-normal ras-flex ras-items-center ras-bg-transparent ras-h-10 focus-visible:ras-outline-0 ras-px-3"
+        placeholder="Placeholder"
+    />
+</div>

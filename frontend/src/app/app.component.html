@@ -1,4 +1,3 @@
-<!-- <ng-template rasIcon [icon]="icon"></ng-template> -->
 <ng-container *ngIf="!showOnlyUiSamples; else uiSamplesRef">
     <div class="ras-container ras-mx-auto">
         <!-- <div class="search-bar">
@@ -25,7 +24,7 @@
                 <textarea
                     placeholder="Write your response here..."
                     [(ngModel)]="responses[data]"
-                    class="ras-w-full ras-h-28 ras-my-4 ras-p-2 ras-rounded ras-border ras-border-solid ras-border-dark ras-shadow-md"
+                    class="ras-w-full ras-h-28 ras-my-4 ras-p-2 ras-rounded ras-border ras-border-solid ras-border-dark-default ras-shadow-md"
                 >
                 </textarea>
                 <ng-template rasCardFoot extraClass="ras-flex ras-justify-end">

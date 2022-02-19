@@ -1,31 +1,33 @@
 
 @mixin btn-variables-mixin($color, $text)
-    --buttonColor: var(--#{$color})
-    --buttonText: var(--#{$text})
+    --buttonColor: var(--#{$color}Var)
+    --buttonColorLightness: var(--#{$color}Lightness)
+    --buttonText: var(--#{$text}Var)
+    --buttonTextLightness: var(--#{$text}Lightness)
 
 // STROKED Button START
 .rasc-btn-stroked
     --buttonBgOpacity: 0
-    background-color: rgba(var(--buttonColor), var(--buttonBgOpacity))
-    color: rgb(var(--buttonColor))
-    border-color: rgb(var(--buttonColor))
+    background-color: hsla(var(--buttonColor), var(--buttonColorLightness), var(--buttonBgOpacity))
+    color: hsl(var(--buttonColor), var(--buttonColorLightness))
+    border-color: hsl(var(--buttonColor), var(--buttonColorLightness))
 
     &:hover
         --buttonBgOpacity: 1
-        color: rgb(var(--buttonText))
+        color: hsl(var(--buttonText), var(--buttonTextLightness))
 
     &:active
         --buttonBgOpacity: 0.8
-        color: rgb(var(--buttonText))
+        color: hsl(var(--buttonText), var(--buttonTextLightness))
 
 // STROKED Button END    
 
 // FILLED Button START
 .rasc-btn-filled
     --buttonBgOpacity: 1
-    background-color: rgba(var(--buttonColor), var(--buttonBgOpacity))
-    color: rgb(var(--buttonText))
-    border-color: rgb(var(--buttonColor))
+    background-color: hsla(var(--buttonColor), var(--buttonColorLightness), var(--buttonBgOpacity))
+    color: hsl(var(--buttonText), var(--buttonTextLightness))
+    border-color: hsl(var(--buttonColor), var(--buttonColorLightness))
 
     &:hover
         --buttonBgOpacity: 0.8

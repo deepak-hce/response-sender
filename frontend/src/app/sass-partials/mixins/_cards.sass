@@ -1,5 +1,6 @@
 @mixin card-variable-mixin($color)
-    --cardColor: var(--#{$color})
+    --cardColor: var(--#{$color}Var)
+    --cardColorLightness: var(--#{$color}Lightness)
 
     
 .rasc-card
@@ -7,17 +8,17 @@
     --headOpacity: 0.2
     --footOpacity: 0.2
     --bodyOpacity: 0.1
-    border-color: rgb(var(--cardColor))
+    border-color: hsl(var(--cardColor), var(--cardColorLightness))
 
     &.is-simple-banner
         box-shadow: none
-        color: rgb(var(--cardColor))
+        color: hsl(var(--cardColor), var(--cardColorLightness))
 
     .rasc-card-head
-        background-color: rgba(var(--cardColor), var(--headOpacity))
+        background-color: hsla(var(--cardColor), var(--cardColorLightness), var(--headOpacity))
 
     .rasc-card-body
-        background-color: rgba(var(--cardColor), var(--bodyOpacity))
+        background-color: hsla(var(--cardColor), var(--cardColorLightness), var(--bodyOpacity))
 
     .rasc-card-foot
-        background-color: rgba(var(--cardColor), var(--footOpacity))
+        background-color: hsla(var(--cardColor), var(--cardColorLightness), var(--footOpacity))

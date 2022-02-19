@@ -11,7 +11,7 @@ import {
     ViewContainerRef,
 } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
-import { IIcon } from '../base/interface/icon/i-icon';
+import { IIcon } from 'src/app/base/interface/icon/i-icon';
 
 @Directive({
     selector: '[rasIcon]',
@@ -49,6 +49,7 @@ export class IconDirective implements OnInit, OnDestroy {
             );
         const faIconRef = this.viewContainerRef.createComponent(factory);
         faIconRef.instance.icon = icon;
+        faIconRef.instance.fixedWidth = true;
         if (size) {
             faIconRef.instance.size = size;
         }
