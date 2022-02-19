@@ -1,10 +1,13 @@
 import {
+    AfterContentChecked,
+    AfterContentInit,
     AfterViewInit,
     ComponentFactoryResolver,
     Directive,
     ElementRef,
     Input,
     OnDestroy,
+    OnInit,
     ViewContainerRef,
 } from '@angular/core';
 import { FaIconComponent } from '@fortawesome/angular-fontawesome';
@@ -13,7 +16,7 @@ import { IIcon } from '../base/interface/icon/i-icon';
 @Directive({
     selector: '[rasIcon]',
 })
-export class IconDirective implements AfterViewInit, OnDestroy {
+export class IconDirective implements OnInit, OnDestroy {
     @Input('icon') iconData: IIcon | null = null;
 
     iconComponent: any;
@@ -23,7 +26,7 @@ export class IconDirective implements AfterViewInit, OnDestroy {
         private componentFactoryResolver: ComponentFactoryResolver
     ) {}
 
-    ngAfterViewInit(): void {
+    ngOnInit(): void {
         if (this.viewContainerRef) {
             this.viewContainerRef.clear();
         }
