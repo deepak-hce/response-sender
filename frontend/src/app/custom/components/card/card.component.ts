@@ -10,6 +10,7 @@ import { CardHeadDirective } from '../../directive/card/card-head.directive';
 })
 export class CardComponent implements OnInit {
     @Input('isSimpleBanner') isSimpleBanner: boolean = false;
+    @Input('raised') raisedIndex: number = 0;
 
     @ContentChild(CardHeadDirective)
     cardHeadTemplate: CardHeadDirective | any;

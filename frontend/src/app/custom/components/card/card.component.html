@@ -1,11 +1,11 @@
 <div
-    class="ras-card ras-m-4 ras-rounded-md ras-overflow-hidden ras-border ras-border-solid ras-card-{{
+    class="rasc-card ras-m-4 ras-rounded-md ras-overflow-hidden ras-border ras-border-solid rasc-card-{{
         cardColorType
-    }}"
+    }} rasc-shadow-{{ raisedIndex }}"
     [class.is-simple-banner]="isSimpleBanner"
 >
     <div
-        class="ras-card-head ras-p-3"
+        class="rasc-card-head ras-p-3"
         *ngIf="
             !isSimpleBanner && cardHeadTemplate && cardHeadTemplate.templateRef
         "
@@ -15,7 +15,7 @@
         ></ng-container>
     </div>
 
-    <div class="ras-card-body ras-px-3 ras-py-4">
+    <div class="rasc-card-body ras-px-3 ras-py-4">
         <ng-content></ng-content>
     </div>
 
@@ -23,7 +23,7 @@
         *ngIf="
             !isSimpleBanner && cardFootTemplate && cardFootTemplate.templateRef
         "
-        class="ras-card-foot ras-p-3"
+        class="rasc-card-foot ras-p-3"
         [ngClass]="cardFootTemplate.extraClass"
     >
         <ng-container

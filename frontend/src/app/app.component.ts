@@ -1,7 +1,9 @@
+import { IIcon } from './base/interface/icon/i-icon';
 import { Component, OnInit } from '@angular/core';
 import { io } from 'socket.io-client';
 import { environment } from 'src/environments/environment';
-import { ModalService } from './modal/service/modal/modal.service';
+import { RasFaIcons } from './constants/fa-library';
+import { EIconSize } from './base/enum/icon/e-icon-size';
 
 @Component({
     selector: 'ras-root',
@@ -9,8 +11,12 @@ import { ModalService } from './modal/service/modal/modal.service';
     styleUrls: ['./app.component.sass'],
 })
 export class AppComponent implements OnInit {
+    icon: IIcon = {
+        icon: RasFaIcons.faKey,
+        size: EIconSize._10x,
+    };
     // To view only Ui samples used
-    showOnlyUiSamples: boolean = false;
+    showOnlyUiSamples: boolean = true;
 
     title = 'response-sender-client';
     requests: any = {};

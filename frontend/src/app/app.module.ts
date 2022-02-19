@@ -8,9 +8,13 @@ import { CustomModule } from './custom/custom.module';
 import { ModalModule } from './modal/modal.module';
 import { UiSamplesComponent } from './components/test/ui-samples/ui-samples.component';
 import { NgxJsonViewerModule } from 'ngx-json-viewer';
+import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
+import { IconDirective } from './directive/icon.directive';
+
+const directives = [IconDirective];
 
 @NgModule({
-    declarations: [AppComponent, UiSamplesComponent],
+    declarations: [AppComponent, UiSamplesComponent, ...directives],
     imports: [
         BrowserModule,
         AppRoutingModule,
@@ -18,6 +22,7 @@ import { NgxJsonViewerModule } from 'ngx-json-viewer';
 
         // Vendor
         NgxJsonViewerModule,
+        FontAwesomeModule,
 
         // Custom
         CustomModule,
