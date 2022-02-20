@@ -1,33 +1,49 @@
 <div
-    class="ras-card ras-m-4 ras-rounded-md ras-overflow-hidden ras-border ras-border-solid ras-card-{{
-        cardColorType
+    class="ras-m-4 ras-rounded-lg rasc-card-{{ cardColorType }} rasc-shadow-{{
+        raisedIndex
     }}"
     [class.is-simple-banner]="isSimpleBanner"
 >
-    <div
-        class="ras-card-head ras-p-3"
+    <ng-container
         *ngIf="
             !isSimpleBanner && cardHeadTemplate && cardHeadTemplate.templateRef
         "
     >
-        <ng-container
-            [ngTemplateOutlet]="cardHeadTemplate.templateRef"
-        ></ng-container>
-    </div>
+        <div
+            class="rasc-card-head ras-p-3 ras-border-t ras-border-r ras-border-l ras-border-solid ras-rounded-t-lg"
+        >
+            <ng-container
+                [ngTemplateOutlet]="cardHeadTemplate.templateRef"
+            ></ng-container>
+        </div>
+    </ng-container>
 
-    <div class="ras-card-body ras-px-3 ras-py-4">
+    <div
+        class="rasc-card-body ras-px-3 ras-py-4 ras-border ras-border-solid"
+        [ngClass]="{
+            'ras-rounded-t-lg':
+                isSimpleBanner ||
+                !(cardHeadTemplate && cardHeadTemplate.templateRef),
+            'ras-rounded-b-lg':
+                isSimpleBanner ||
+                !(cardFootTemplate && cardFootTemplate.templateRef)
+        }"
+    >
         <ng-content></ng-content>
     </div>
 
-    <div
+    <ng-container
         *ngIf="
             !isSimpleBanner && cardFootTemplate && cardFootTemplate.templateRef
         "
-        class="ras-card-foot ras-p-3"
-        [ngClass]="cardFootTemplate.extraClass"
     >
-        <ng-container
-            [ngTemplateOutlet]="cardFootTemplate.templateRef"
-        ></ng-container>
-    </div>
+        <div
+            class="rasc-card-foot ras-p-3 ras-border-b ras-border-r ras-border-l ras-border-solid ras-rounded-b-lg"
+            [ngClass]="cardFootTemplate.extraClass"
+        >
+            <ng-container
+                [ngTemplateOutlet]="cardFootTemplate.templateRef"
+            ></ng-container>
+        </div>
+    </ng-container>
 </div>

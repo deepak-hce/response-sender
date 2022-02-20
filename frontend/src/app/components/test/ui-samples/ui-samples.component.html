@@ -1,7 +1,7 @@
 <!-- Heading Template START-->
 <ng-template #sampleHeadingTemplate let-heading="heading">
     <div
-        class="ras-py-3 ras-px-4 ras-mb-4 ras-border-b-2 ras-border-solid ras-border-secondary"
+        class="ras-py-3 ras-px-4 ras-mb-4 ras-border-b-2 ras-border-solid ras-border-secondary-default"
     >
         {{ heading }}
     </div>
@@ -11,28 +11,56 @@
 <!-- Divider Template START-->
 <ng-template #sampleDividerTemplate>
     <div
-        class="ras-my-4 ras-border-b-2 ras-border-solid ras-border-secondary"
+        class="ras-my-4 ras-border-b-2 ras-border-solid ras-border-secondary-default"
     ></div>
 </ng-template>
 <!-- Divider Template END-->
 
-<!-- Dummy Text START -->
-<ng-template #sampleDummyTextTemplate>
-    <p>
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum
-        repellat accusantium veritatis officiis aliquid accusamus velit dolore
-        impedit, nisi consequatur dolorem nam optio veniam tenetur
-    </p>
-</ng-template>
-<!-- Dummy Text END -->
-
 <div class="ras-w-full ras-bg-common ras-mx-auto">
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Forms'
+        }"
+    ></ng-container>
+
+    <ras-form-sign-in></ras-form-sign-in>
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <!-- Input Fields START -->
+
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Input Fields'
+        }"
+    ></ng-container>
+
+    <ras-input-field
+        class="ras-w-full"
+        type="email"
+        placeholder="Email"
+    ></ras-input-field>
+    <ras-input-field
+        class="ras-w-full"
+        type="password"
+        placeholder="Password"
+        [prefixIcon]="keyIcon"
+        [suffixIcon]="keyIcon"
+    ></ras-input-field>
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <!-- Input Fields END -->
+
     <ng-container
         [ngTemplateOutlet]="sampleHeadingTemplate"
         [ngTemplateOutletContext]="{
             heading: 'Buttons'
         }"
     ></ng-container>
+
     <!-- STROKED Buttons START -->
     <div class="ras-p-3">
         <ras-button rasBtnPrimary class="ras-mx-2">Button</ras-button>
@@ -100,98 +128,19 @@
 
     <!-- Card START -->
 
-    <!-- PRIMARY START -->
-    <ras-card rasCardPrimary>
-        <ng-template rasCardHead>Hello World!</ng-template>
-        <ng-container
-            [ngTemplateOutlet]="sampleDummyTextTemplate"
-        ></ng-container>
-        <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
-            <ras-button rasBtnDark>Button</ras-button>
-            <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
-        </ng-template>
-    </ras-card>
-    <!-- PRIMARY END -->
-
-    <!-- SECONDARY START -->
-    <ras-card rasCardSecondary>
-        <ng-template rasCardHead>Hello World!</ng-template>
-        <ng-container
-            [ngTemplateOutlet]="sampleDummyTextTemplate"
-        ></ng-container>
-        <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
-            <ras-button rasBtnDark>Button</ras-button>
-            <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
-        </ng-template>
-    </ras-card>
-    <!-- SECONDARY END -->
-
-    <!-- SUCCESS START -->
-    <ras-card rasCardSuccess>
-        <ng-template rasCardHead>Hello World!</ng-template>
-        <ng-container
-            [ngTemplateOutlet]="sampleDummyTextTemplate"
-        ></ng-container>
-        <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
-            <ras-button rasBtnDark>Button</ras-button>
-            <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
-        </ng-template>
-    </ras-card>
-    <!-- SUCCESS END -->
-
-    <!-- WARNING START -->
-    <ras-card rasCardWarning>
-        <ng-template rasCardHead>Hello World!</ng-template>
-        <ng-container
-            [ngTemplateOutlet]="sampleDummyTextTemplate"
-        ></ng-container>
-        <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
-            <ras-button rasBtnDark>Button</ras-button>
-            <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
-        </ng-template>
-    </ras-card>
-    <!-- WARNING END -->
-
-    <!-- DANGER START -->
-    <ras-card rasCardDanger>
-        <ng-template rasCardHead>Hello World!</ng-template>
-        <ng-container
-            [ngTemplateOutlet]="sampleDummyTextTemplate"
-        ></ng-container>
-        <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
-            <ras-button rasBtnDark>Button</ras-button>
-            <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
-        </ng-template>
-    </ras-card>
-    <!-- DANGER END -->
-
-    <!-- LIGHT START -->
-    <ras-card>
-        <ng-template rasCardHead>Hello World!</ng-template>
-        <ng-container
-            [ngTemplateOutlet]="sampleDummyTextTemplate"
-        ></ng-container>
-        <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
-            <ras-button rasBtnDark>Button</ras-button>
-            <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
-        </ng-template>
-    </ras-card>
-    <!-- LIGHT END -->
-
-    <!-- DARK START -->
-    <ras-card rasCardDark>
-        <ng-template rasCardHead>Hello World!</ng-template>
-        <ng-container
-            [ngTemplateOutlet]="sampleDummyTextTemplate"
-        ></ng-container>
-        <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
-            <ras-button rasBtnDark>Button</ras-button>
-            <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
-        </ng-template>
-    </ras-card>
-    <!-- DARK END -->
+    <ras-card-ui-samples></ras-card-ui-samples>
 
     <!-- Card END -->
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Icon'
+        }"
+    ></ng-container>
+    <ng-template rasIcon [icon]="icon"></ng-template>
 
     <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
 </div>

@@ -1,10 +1,15 @@
 <button
-    class="ras-py-1 ras-px-3 ras-rounded ras-text-base ras-border ras-border-solid ras-ease-linear ras-duration-200 ras-btn-{{
+    class="ras-w-full ras-rounded ras-border ras-border-solid ras-ease-linear ras-duration-200 rasc-btn-{{
         buttonType
-    }} ras-btn-{{ buttonColorType }}"
+    }} rasc-btn-{{ buttonColorType }}"
+    [ngClass]="{
+        'ras-py-2 ras-px-5 ras-text-lg': buttonSize === 'lg',
+        'ras-py-1 ras-px-3 ras-text-sm': buttonSize === 'sm',
+        'ras-py-1 ras-px-4 ras-text-base': buttonSize === null
+    }"
     (click)="clicked.emit($event)"
 >
-    <span class="ras-mx-1">
+    <span class="ras-mx-1 ras-whitespace-nowrap">
         <ng-content></ng-content>
     </span>
 </button>

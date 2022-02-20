@@ -1,0 +1,24 @@
+<div class="ras-h-full-vh ras-w-full-vw">
+    <div
+        class="ras-h-full ras-w-full ras-relative ras-flex ras-items-stretch rasc-gradient-bg"
+    >
+        <div
+            class="ras-w-full md:ras-w-1/2 ras-bg-transparent ras-absolute md:ras-relative ras-inset-0 ras-flex ras-justify-center ras-items-center"
+        >
+            <div
+                class="rasc-form-container lg:ras-w-2/3 ras-flex ras-flex-col ras-justify-center"
+            >
+                <ras-form-sign-in
+                    class="ras-w-full"
+                    (onSubmit)="onSignInClicked($event)"
+                ></ras-form-sign-in>
+                <div class="ras-text-center">
+                    <span class="ras-underline ras-text-light-900"
+                        >Don't have an Account? Sign-Up</span
+                    >
+                </div>
+            </div>
+        </div>
+        <div class="ras-w-full md:ras-w-1/2 ras-bg-transparent"></div>
+    </div>
+</div>
