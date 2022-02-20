@@ -1,7 +1,5 @@
-@import ./../../../sass-partials/mixins/_host
 @import ./../../../sass-partials/mixins/_cards
 
-@include host-type-inline-block
 
 .rasc-card-primary
     @include card-variable-mixin($color: primary)
@@ -22,9 +20,7 @@
     @include card-variable-mixin($color: info)
     
 .rasc-card-light
-    --lightCardVar: 0, 0%
-    --lightCardLightness: 70%
-    @include card-variable-mixin($color: lightCard)
+    @include card-variable-mixin($color: light)
     
 .rasc-card-dark
     @include card-variable-mixin($color: dark)

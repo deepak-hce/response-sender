@@ -1,24 +1,16 @@
+
 @mixin card-variable-mixin($color)
-    --cardColor: var(--#{$color}Var)
-    --cardColorLightness: var(--#{$color}Lightness)
-
-    
-.rasc-card
-    --shadowOpacity: 0.3
-    --headOpacity: 0.2
-    --footOpacity: 0.2
-    --bodyOpacity: 0.1
-    border-color: hsl(var(--cardColor), var(--cardColorLightness))
-
     &.is-simple-banner
         box-shadow: none
-        color: hsl(var(--cardColor), var(--cardColorLightness))
+        @apply ras-text-#{$color}-default
 
     .rasc-card-head
-        background-color: hsla(var(--cardColor), var(--cardColorLightness), var(--headOpacity))
+        @apply ras-border-#{$color}-800 ras-bg-#{$color}-200
 
     .rasc-card-body
-        background-color: hsla(var(--cardColor), var(--cardColorLightness), var(--bodyOpacity))
+        @apply ras-border-#{$color}-800 ras-bg-#{$color}-100
 
     .rasc-card-foot
-        background-color: hsla(var(--cardColor), var(--cardColorLightness), var(--footOpacity))
+        @apply ras-border-#{$color}-800 ras-bg-#{$color}-200
+
+    

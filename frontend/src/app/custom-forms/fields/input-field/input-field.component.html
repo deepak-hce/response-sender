@@ -1,18 +1,66 @@
-<label class="ras-text-sm ras-font-semibold ras-leading-tight ras-mb-2"
-    >Input Field</label
->
-<div
-    class="ras-flex ras-justify-start ras-items-center ras-w-full ras-rounded ras-overflow-hidden ras-border ras-border-solid ras-border-light-300"
->
-    <ng-container *ngIf="prefixIcon">
-        <div
-            class="ras-flex ras-justify-center ras-items-center ras-px-3 ras-h-10 ras-border-r ras-border-solid ras-border-light-300 ras-bg-light-300 ras-text-dark-default"
-        >
-            <ng-template rasIcon [icon]="prefixIcon"></ng-template>
-        </div>
-    </ng-container>
-    <input
-        class="ras-flex-1 ras-text-sm ras-font-normal ras-flex ras-items-center ras-bg-transparent ras-h-10 focus-visible:ras-outline-0 ras-px-3"
-        placeholder="Placeholder"
-    />
+<div class="ras-flex ras-flex-col ras-w-full" style="min-width: 280px">
+    <label
+        class="ras-text-sm ras-font-semibold ras-leading-tight ras-mb-2"
+        [ngClass]="{
+            'ras-text-sm': inputSize === 'sm',
+            'ras-text-lg': inputSize === 'lg',
+            'ras-text-base': inputSize === null
+        }"
+        *ngIf="inputLabel"
+        >{{ inputLabel }}</label
+    >
+    <div
+        class="rasc-input-field ras-flex ras-justify-start ras-items-center ras-flex-nowrap ras-rounded rasc-shadow-1"
+    >
+        <ng-container *ngIf="prefixIcon">
+            <div
+                class="rasc-input-prefix-icon ras-flex ras-justify-center ras-items-center ras-px-3 ras-border ras-border-r-0 ras-border-solid ras-rounded-l"
+                [ngClass]="{
+                    'ras-border-primary-default ras-text-light-default ras-bg-primary-default':
+                        focused,
+                    'ras-border-light-300 ras-text-dark-default ras-bg-light-300':
+                        !focused,
+                    'ras-text-sm ras-h-8': inputSize === 'sm',
+                    'ras-text-lg ras-h-12': inputSize === 'lg',
+                    'ras-text-base ras-h-10': inputSize === null
+                }"
+            >
+                <ng-template rasIcon [icon]="prefixIcon"></ng-template>
+            </div>
+        </ng-container>
+        <input
+            class="rasc-input ras-flex-1 ras-font-normal ras-flex ras-items-center ras-bg-light-100 focus-visible:ras-outline-0 ras-px-3 ras-border ras-border-solid"
+            [ngClass]="{
+                'ras-rounded-l': !prefixIcon,
+                'ras-rounded-r': !suffixIcon,
+                'ras-border-primary-default': focused,
+                'ras-border-light-400': !focused,
+                'ras-text-sm ras-h-8': inputSize === 'sm',
+                'ras-text-lg ras-h-12': inputSize === 'lg',
+                'ras-text-base ras-h-10': inputSize === null
+            }"
+            type="{{ inputType }}"
+            placeholder="{{ inputPlaceHolder }}"
+            [ngModel]="inputValue"
+            (ngModelChange)="onChange($event)"
+            (focus)="onFocus()"
+            (focusout)="onFocusOut()"
+        />
+        <ng-container *ngIf="suffixIcon">
+            <div
+                class="rasc-input-suffix-icon ras-flex ras-justify-center ras-items-center ras-px-3 ras-border ras-border-l-0 ras-border-solid ras-rounded-r"
+                [ngClass]="{
+                    'ras-border-primary-default ras-text-light-default ras-bg-primary-default':
+                        focused,
+                    'ras-border-light-300 ras-text-dark-default ras-bg-light-300':
+                        !focused,
+                    'ras-text-sm ras-h-8': inputSize === 'sm',
+                    'ras-text-lg ras-h-12': inputSize === 'lg',
+                    'ras-text-base ras-h-10': inputSize === null
+                }"
+            >
+                <ng-template rasIcon [icon]="suffixIcon"></ng-template>
+            </div>
+        </ng-container>
+    </div>
 </div>

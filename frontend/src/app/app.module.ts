@@ -12,11 +12,15 @@ import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
 import { CardUiSamplesComponent } from './components/test/card-ui-samples/card-ui-samples.component';
 import { CustomFormsModule } from './custom-forms/custom-forms.module';
 import { SharedModule } from './shared/shared.module';
+import { LandingPageComponent } from './screens/landing-page/landing-page.component';
+import { DashboardPageComponent } from './screens/dashboard-page/dashboard-page.component';
 
 const components = [UiSamplesComponent, CardUiSamplesComponent];
 
+const screens = [LandingPageComponent, DashboardPageComponent];
+
 @NgModule({
-    declarations: [AppComponent, ...components],
+    declarations: [AppComponent, ...components, ...screens],
     imports: [
         BrowserModule,
         AppRoutingModule,

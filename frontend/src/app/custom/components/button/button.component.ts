@@ -1,4 +1,4 @@
-import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { EButtonColorType } from 'src/app/base/enum/button/e-button-color-type';
 import { EButtonType } from 'src/app/base/enum/button/e-button-type';
 
@@ -13,6 +13,9 @@ export class ButtonComponent implements OnInit {
 
     EButtonColorType = EButtonColorType;
     EButtonType = EButtonType;
+
+    @Input('size')
+    buttonSize: 'lg' | 'sm' | null = null;
 
     @Output('onClick') clicked = new EventEmitter<any>();
 

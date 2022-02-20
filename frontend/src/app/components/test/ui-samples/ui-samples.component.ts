@@ -12,8 +12,17 @@ import { ModalService } from 'src/app/modal/service/modal/modal.service';
 export class UiSamplesComponent implements OnInit {
     icon: IIcon = {
         icon: RasFaIcons.faKey,
-        size: EIconSize._4x,
+        size: EIconSize._2x,
     };
+
+    userIcon: IIcon = {
+        icon: RasFaIcons.faUser,
+    };
+
+    keyIcon: IIcon = {
+        icon: RasFaIcons.faKey,
+    };
+
     constructor(private modalService: ModalService) {}
 
     ngOnInit(): void {}

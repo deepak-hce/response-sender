@@ -20,13 +20,39 @@
     <ng-container
         [ngTemplateOutlet]="sampleHeadingTemplate"
         [ngTemplateOutletContext]="{
+            heading: 'Forms'
+        }"
+    ></ng-container>
+
+    <ras-form-sign-in></ras-form-sign-in>
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <!-- Input Fields START -->
+
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
             heading: 'Input Fields'
         }"
     ></ng-container>
 
-    <ras-input-field class="ras-w-full"></ras-input-field>
+    <ras-input-field
+        class="ras-w-full"
+        type="email"
+        placeholder="Email"
+    ></ras-input-field>
+    <ras-input-field
+        class="ras-w-full"
+        type="password"
+        placeholder="Password"
+        [prefixIcon]="keyIcon"
+        [suffixIcon]="keyIcon"
+    ></ras-input-field>
 
     <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <!-- Input Fields END -->
 
     <ng-container
         [ngTemplateOutlet]="sampleHeadingTemplate"

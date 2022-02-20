@@ -3,6 +3,12 @@ module.exports = {
     content: ["./src/**/*.{html,ts}"],
     theme: {
         extend: {
+            height: {
+                "full-vh": "100vh",
+            },
+            width: {
+                "full-vw": "100vw",
+            },
             backgroundColor: {
                 common: "var(--commonBgColor)",
             },
@@ -75,14 +81,14 @@ module.exports = {
                 },
                 light: {
                     default: "var(--lightColor)",
-                    100: "hsl(var(--lightVar), 90%)",
-                    200: "hsl(var(--lightVar), 80%)",
-                    300: "hsl(var(--lightVar), 75%)",
-                    400: "hsl(var(--lightVar), 70%)",
-                    500: "hsl(var(--lightVar), 65%)",
-                    600: "hsl(var(--lightVar), 60%)",
-                    800: "hsl(var(--lightVar), 55%)",
-                    900: "hsl(var(--lightVar), 50%)",
+                    100: "hsl(var(--lightVar), 95%)",
+                    200: "hsl(var(--lightVar), 90%)",
+                    300: "hsl(var(--lightVar), 85%)",
+                    400: "hsl(var(--lightVar), 80%)",
+                    500: "hsl(var(--lightVar), 75%)",
+                    600: "hsl(var(--lightVar), 70%)",
+                    800: "hsl(var(--lightVar), 65%)",
+                    900: "hsl(var(--lightVar), 60%)",
                 },
                 dark: {
                     default: "var(--darkColor)",
