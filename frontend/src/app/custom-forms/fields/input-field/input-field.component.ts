@@ -6,9 +6,7 @@ import {
     Input,
     OnInit,
 } from '@angular/core';
-import { RasFaIcons } from 'src/app/constants/fa-library';
-import { EIconSize } from 'src/app/base/enum/icon/e-icon-size';
-import { NG_VALUE_ACCESSOR, ControlValueAccessor } from '@angular/forms';
+import { NG_VALUE_ACCESSOR } from '@angular/forms';
 import { InputFormFieldComponent } from '../abstract/input-form-field/input-form-field.component';
 
 @Component({

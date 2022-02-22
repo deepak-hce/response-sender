@@ -17,6 +17,8 @@
         [prefixIcon]="userIcon"
         required
     ></ras-input-field>
+    {{ this.signInForm?.get(this.EMAIL_FIELD)?.errors | json }}
+
     <ras-input-field
         type="password"
         placeholder="Password"
