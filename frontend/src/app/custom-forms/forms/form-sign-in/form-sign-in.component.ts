@@ -21,12 +21,15 @@ export class FormSignInComponent implements OnInit {
         icon: RasFaIcons.faKey,
     };
 
+    readonly EMAIL_FIELD = 'email';
+    readonly PASSWORD_FIELD = 'password';
+
     constructor() {}
 
     ngOnInit(): void {
         this.signInForm = new FormGroup({
-            email: new FormControl(''),
-            password: new FormControl(''),
+            [this.EMAIL_FIELD]: new FormControl(''),
+            [this.PASSWORD_FIELD]: new FormControl(''),
         });
     }
 

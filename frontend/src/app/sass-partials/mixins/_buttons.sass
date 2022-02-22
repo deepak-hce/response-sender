@@ -5,6 +5,18 @@
     --buttonText: var(--#{$text}Var)
     --buttonTextLightness: var(--#{$text}Lightness)
 
+    @if $color == dark
+        --buttonColorHoverLightness: 20%
+    @else if $color == light
+        --buttonColorHoverLightness: 85%
+    @else 
+        --buttonColorHoverLightness: 60%
+
+    @if $color == dark
+        --buttonColorActiveLightness: 30%
+    @else 
+        --buttonColorActiveLightness: 70%
+
 // STROKED Button START
 .rasc-btn-stroked
     --buttonBgOpacity: 0
@@ -17,23 +29,26 @@
         color: hsl(var(--buttonText), var(--buttonTextLightness))
 
     &:active
-        --buttonBgOpacity: 0.8
+        --buttonBgOpacity: 1
         color: hsl(var(--buttonText), var(--buttonTextLightness))
+        border-color: hsl(var(--buttonColor), var(--buttonColorActiveLightness))
+        background-color: hsla(var(--buttonColor), var(--buttonColorActiveLightness), var(--buttonBgOpacity))
 
 // STROKED Button END    
 
 // FILLED Button START
 .rasc-btn-filled
-    --buttonBgOpacity: 1
-    background-color: hsla(var(--buttonColor), var(--buttonColorLightness), var(--buttonBgOpacity))
+    background-color: hsl(var(--buttonColor), var(--buttonColorLightness))
     color: hsl(var(--buttonText), var(--buttonTextLightness))
     border-color: hsl(var(--buttonColor), var(--buttonColorLightness))
 
     &:hover
-        --buttonBgOpacity: 0.8
+        background-color: hsl(var(--buttonColor), var(--buttonColorHoverLightness))
+        border-color: hsl(var(--buttonColor), var(--buttonColorHoverLightness))
 
     &:active
-        --buttonBgOpacity: 0.9
+        background-color: hsl(var(--buttonColor), var(--buttonColorActiveLightness))
+        border-color: hsl(var(--buttonColor), var(--buttonColorActiveLightness))
 
 // FILLED Button END
 
