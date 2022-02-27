@@ -2,6 +2,7 @@ import { Component, EventEmitter, OnInit, Output } from '@angular/core';
 import { FormControl, FormGroup } from '@angular/forms';
 import { IIcon } from 'src/app/base/interface/icon/i-icon';
 import { RasFaIcons } from 'src/app/constants/fa-library';
+import { CustomValidators } from '../../validators/custom-validators';
 
 @Component({
     selector: 'ras-form-sign-in',
@@ -28,8 +29,13 @@ export class FormSignInComponent implements OnInit {
 
     ngOnInit(): void {
         this.signInForm = new FormGroup({
-            [this.EMAIL_FIELD]: new FormControl(''),
-            [this.PASSWORD_FIELD]: new FormControl(''),
+            [this.EMAIL_FIELD]: new FormControl('', [
+                CustomValidators.required('Email required'),
+                CustomValidators.email(),
+            ]),
+            [this.PASSWORD_FIELD]: new FormControl('', [
+                CustomValidators.required('Password required'),
+            ]),
         });
     }
 

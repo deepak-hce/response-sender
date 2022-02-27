@@ -63,4 +63,18 @@
             </div>
         </ng-container>
     </div>
+    <ng-container
+        *ngIf="formControl && formControl.touched && formControl.errors"
+    >
+        <div
+            class="ras-my-1 ras-px-2 ras-py-1 ras-text-danger-default ras-bg-danger-100 ras-rounded-sm"
+            [ngClass]="{
+                'ras-text-xs': inputSize === 'sm',
+                'ras-text-base': inputSize === 'lg',
+                'ras-text-lg': inputSize === null
+            }"
+        >
+            {{ formControl.errors | extractError }}
+        </div>
+    </ng-container>
 </div>

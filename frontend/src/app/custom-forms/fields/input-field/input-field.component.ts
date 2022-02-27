@@ -6,7 +6,7 @@ import {
     Input,
     OnInit,
 } from '@angular/core';
-import { NG_VALUE_ACCESSOR } from '@angular/forms';
+import { AbstractControl, NG_VALUE_ACCESSOR } from '@angular/forms';
 import { InputFormFieldComponent } from '../abstract/input-form-field/input-form-field.component';
 
 @Component({
@@ -29,12 +29,14 @@ export class InputFieldComponent
     @Input('label') inputLabel: string | null = null;
     @Input('placeholder') inputPlaceHolder: string | null = null;
 
+    @Input('currentFormControl') formControl: AbstractControl | null = null;
+
     @Input('prefixIcon') prefixIcon: IIcon | null = null;
     @Input('suffixIcon') suffixIcon: IIcon | null = null;
 
     @Input('size') inputSize: 'lg' | 'sm' | null = null;
 
-    @HostBinding('class.ras-py-4') private _classPy4 = true;
+    @HostBinding('class.ras-py-3') private _classPy4 = true;
     @HostBinding('class.ras-px-4') private _classPx4 = true;
     @HostBinding('class.rasc-focused') private _classFocused = false;
 

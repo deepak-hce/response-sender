@@ -12,21 +12,21 @@
     <ras-input-field
         type="email"
         placeholder="Email"
-        formControlName="email"
+        [formControlName]="EMAIL_FIELD"
         size="lg"
         [prefixIcon]="userIcon"
-        required
+        [currentFormControl]="signInForm.get(EMAIL_FIELD)"
     ></ras-input-field>
-    {{ this.signInForm?.get(this.EMAIL_FIELD)?.errors | json }}
 
     <ras-input-field
         type="password"
         placeholder="Password"
-        formControlName="password"
+        [formControlName]="PASSWORD_FIELD"
         size="lg"
         [prefixIcon]="keyIcon"
-        required
+        [currentFormControl]="signInForm.get(PASSWORD_FIELD)"
     ></ras-input-field>
+
     <div class="ras-px-4 ras-py-2">
         <ras-button rasBtnFilled rasBtnPrimary class="ras-w-full" size="lg"
             >Sign In</ras-button
