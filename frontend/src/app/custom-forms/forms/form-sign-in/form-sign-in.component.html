@@ -1,0 +1,39 @@
+<form
+    *ngIf="signInForm"
+    class="container"
+    [formGroup]="signInForm"
+    class="ras-flex ras-flex-col ras-items-stretch"
+    (ngSubmit)="onSubmit()"
+>
+    <h1 class="ras-px-4 ras-py-2 ras-text-dark-400 ras-text-2xl ras-font-bold">
+        Sign-In
+    </h1>
+
+    <ras-input-field
+        type="email"
+        placeholder="Email"
+        [formControlName]="EMAIL_FIELD"
+        size="lg"
+        [currentFormControl]="signInForm.get(EMAIL_FIELD)"
+    >
+        <ng-template #prefix>
+            <ras-icon [icon]="userIcon"></ras-icon>
+        </ng-template>
+    </ras-input-field>
+
+    <ras-input-field
+        type="password"
+        placeholder="Password"
+        [formControlName]="PASSWORD_FIELD"
+        size="lg"
+        [currentFormControl]="signInForm.get(PASSWORD_FIELD)"
+    >
+        <ng-template #prefix>
+            <ras-icon [icon]="keyIcon"></ras-icon>
+        </ng-template>
+    </ras-input-field>
+
+    <div class="ras-px-4 ras-py-2">
+        <ras-button class="ras-w-full" shape="block">Sign In</ras-button>
+    </div>
+</form>

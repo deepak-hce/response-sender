@@ -1,0 +1,165 @@
+<div class="ras-d-form-control ras-w-full" style="min-width: 280px">
+    <label class="ras-d-label" *ngIf="inputLabel">
+        <span
+            class="ras-d-label-text ras-font-semibold"
+            [ngClass]="{
+                'ras-text-xs': inputSize === 'xs',
+                'ras-text-sm': inputSize === 'sm',
+                'ras-text-base': inputSize === 'md',
+                'ras-text-lg': inputSize === 'lg'
+            }"
+            >{{ inputLabel }}</span
+        >
+    </label>
+    <ng-container *ngIf="!(prefix || suffix)">
+        <input
+            class="ras-d-input ras-d-input-bordered"
+            [ngClass]="{
+                'ras-d-input-xs': inputSize === 'xs',
+                'ras-d-input-sm': inputSize === 'sm',
+                'ras-d-input-md': inputSize === 'md',
+                'ras-d-input-lg': inputSize === 'lg',
+                'ras-d-input-bordered': inputStyle !== 'no-border',
+                'ras-d-input-ghost': inputStyle === 'ghost',
+                'ras-d-input-primary':
+                    inputColor === this.themeService.ThemeColor.PRIMARY,
+                'ras-d-input-secondary':
+                    inputColor === this.themeService.ThemeColor.SECONDARY,
+                'ras-d-input-accent':
+                    inputColor === this.themeService.ThemeColor.ACCENT,
+                'ras-d-input-success':
+                    inputColor === this.themeService.ThemeColor.SUCCESS,
+                'ras-d-input-warning':
+                    inputColor === this.themeService.ThemeColor.WARNING,
+                'ras-d-input-error':
+                    inputColor === this.themeService.ThemeColor.ERROR,
+                'ras-d-input-info':
+                    inputColor === this.themeService.ThemeColor.INFO
+            }"
+            type="{{ inputType }}"
+            placeholder="{{ inputPlaceHolder }}"
+            [ngModel]="inputValue"
+            (ngModelChange)="onChange($event)"
+            (focus)="onFocus()"
+            (focusout)="onFocusOut()"
+        />
+    </ng-container>
+    <div
+        *ngIf="prefix || suffix"
+        class="ras-d-input-group rasc-rounded ras-outline ras-outline-2 ras-outline-offset-1 ras-outline-transparent"
+        [ngClass]="{
+            'ras-d-input-group-xs': inputSize === 'xs',
+            'ras-d-input-group-sm': inputSize === 'sm',
+            'ras-d-input-group-md': inputSize === 'md',
+            'ras-d-input-group-lg': inputSize === 'lg',
+            'ras-outline-primary':
+                inputColor === this.themeService.ThemeColor.PRIMARY && focused,
+            'ras-outline-secondary':
+                inputColor === this.themeService.ThemeColor.SECONDARY &&
+                focused,
+            'ras-outline-accent':
+                inputColor === this.themeService.ThemeColor.ACCENT && focused,
+            'ras-outline-success':
+                inputColor === this.themeService.ThemeColor.SUCCESS && focused,
+            'ras-outline-warning':
+                inputColor === this.themeService.ThemeColor.WARNING && focused,
+            'ras-outline-error':
+                inputColor === this.themeService.ThemeColor.ERROR && focused,
+            'ras-outline-info':
+                inputColor === this.themeService.ThemeColor.INFO && focused
+        }"
+    >
+        <ng-container *ngIf="prefix">
+            <span
+                [ngClass]="{
+                    'ras-text-xs': inputSize === 'xs',
+                    'ras-text-sm': inputSize === 'sm',
+                    'ras-text-base': inputSize === 'md',
+                    'ras-text-lg': inputSize === 'lg',
+                    'ras-text-primary-content ras-bg-primary':
+                        inputColor === this.themeService.ThemeColor.PRIMARY,
+                    'ras-text-secondary-content ras-bg-secondary':
+                        inputColor === this.themeService.ThemeColor.SECONDARY,
+                    'ras-text-accent-content ras-bg-accent':
+                        inputColor === this.themeService.ThemeColor.ACCENT,
+                    'ras-text-success-content ras-bg-success':
+                        inputColor === this.themeService.ThemeColor.SUCCESS,
+                    'ras-text-warning-content ras-bg-warning':
+                        inputColor === this.themeService.ThemeColor.WARNING,
+                    'ras-text-error-content ras-bg-error':
+                        inputColor === this.themeService.ThemeColor.ERROR,
+                    'ras-text-info-content ras-bg-info':
+                        inputColor === this.themeService.ThemeColor.INFO
+                }"
+            >
+                <ng-container *ngTemplateOutlet="prefix"></ng-container>
+            </span>
+        </ng-container>
+        <input
+            class="ras-d-input ras-flex-1 focus:ras-outline-none"
+            [ngClass]="{
+                'ras-d-input-bordered': inputStyle !== 'no-border',
+                'ras-d-input-ghost': inputStyle === 'ghost',
+                'ras-d-input-primary':
+                    inputColor === this.themeService.ThemeColor.PRIMARY,
+                'ras-d-input-secondary':
+                    inputColor === this.themeService.ThemeColor.SECONDARY,
+                'ras-d-input-accent':
+                    inputColor === this.themeService.ThemeColor.ACCENT,
+                'ras-d-input-success':
+                    inputColor === this.themeService.ThemeColor.SUCCESS,
+                'ras-d-input-warning':
+                    inputColor === this.themeService.ThemeColor.WARNING,
+                'ras-d-input-error':
+                    inputColor === this.themeService.ThemeColor.ERROR,
+                'ras-d-input-info':
+                    inputColor === this.themeService.ThemeColor.INFO
+            }"
+            type="{{ inputType }}"
+            placeholder="{{ inputPlaceHolder }}"
+            [ngModel]="inputValue"
+            (ngModelChange)="onChange($event)"
+            (focus)="onFocus()"
+            (focusout)="onFocusOut()"
+        />
+        <ng-container *ngIf="suffix">
+            <span
+                [ngClass]="{
+                    'ras-text-xs': inputSize === 'xs',
+                    'ras-text-sm': inputSize === 'sm',
+                    'ras-text-base': inputSize === 'md',
+                    'ras-text-lg': inputSize === 'lg',
+                    'ras-text-primary-content ras-bg-primary':
+                        inputColor === this.themeService.ThemeColor.PRIMARY,
+                    'ras-text-secondary-content ras-bg-secondary':
+                        inputColor === this.themeService.ThemeColor.SECONDARY,
+                    'ras-text-accent-content ras-bg-accent':
+                        inputColor === this.themeService.ThemeColor.ACCENT,
+                    'ras-text-success-content ras-bg-success':
+                        inputColor === this.themeService.ThemeColor.SUCCESS,
+                    'ras-text-warning-content ras-bg-warning':
+                        inputColor === this.themeService.ThemeColor.WARNING,
+                    'ras-text-error-content ras-bg-error':
+                        inputColor === this.themeService.ThemeColor.ERROR,
+                    'ras-text-info-content ras-bg-info':
+                        inputColor === this.themeService.ThemeColor.INFO
+                }"
+            >
+                <ng-container *ngTemplateOutlet="suffix"></ng-container>
+            </span>
+        </ng-container>
+    </div>
+    <ng-container
+        *ngIf="formControl && formControl.touched && formControl.errors"
+    >
+        <div
+            class="ras-text-error ras-py-1 ras-px-2"
+            [ngClass]="{
+                'ras-text-xs': inputSize === 'sm' || inputSize === 'xs',
+                'ras-text-sm': inputSize === 'md' || inputSize === 'lg'
+            }"
+        >
+            {{ formControl.errors | extractError }}
+        </div>
+    </ng-container>
+</div>

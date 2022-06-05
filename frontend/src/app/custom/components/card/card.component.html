@@ -1,0 +1,44 @@
+<div class="ras-m-4 ras-rounded-lg" [class.is-simple-banner]="isSimpleBanner">
+    <ng-container
+        *ngIf="
+            !isSimpleBanner && cardHeadTemplate && cardHeadTemplate.templateRef
+        "
+    >
+        <div
+            class="ras-p-3 ras-border-t ras-border-r ras-border-l ras-border-solid ras-rounded-t-lg"
+        >
+            <ng-container
+                [ngTemplateOutlet]="cardHeadTemplate.templateRef"
+            ></ng-container>
+        </div>
+    </ng-container>
+
+    <div
+        class="ras-px-3 ras-py-4 ras-border ras-border-solid"
+        [ngClass]="{
+            'ras-rounded-t-lg':
+                isSimpleBanner ||
+                !(cardHeadTemplate && cardHeadTemplate.templateRef),
+            'ras-rounded-b-lg':
+                isSimpleBanner ||
+                !(cardFootTemplate && cardFootTemplate.templateRef)
+        }"
+    >
+        <ng-content></ng-content>
+    </div>
+
+    <ng-container
+        *ngIf="
+            !isSimpleBanner && cardFootTemplate && cardFootTemplate.templateRef
+        "
+    >
+        <div
+            class="ras-p-3 ras-border-b ras-border-r ras-border-l ras-border-solid ras-rounded-b-lg"
+            [ngClass]="cardFootTemplate.extraClass"
+        >
+            <ng-container
+                [ngTemplateOutlet]="cardFootTemplate.templateRef"
+            ></ng-container>
+        </div>
+    </ng-container>
+</div>

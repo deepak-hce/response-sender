@@ -1,0 +1,100 @@
+<!-- Heading Template START-->
+<ng-template #sampleHeadingTemplate let-heading="heading">
+    <div class="ras-py-3 ras-px-4 ras-mb-4">
+        {{ heading }}
+    </div>
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+</ng-template>
+<!-- Heading Template END-->
+
+<!-- Divider Template START-->
+<ng-template #sampleDividerTemplate>
+    <div class="ras-d-divider"></div>
+</ng-template>
+<!-- Divider Template END-->
+
+<div class="ras-w-full ras-bg-common ras-mx-auto">
+    <!-- <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Forms'
+        }"
+    ></ng-container>
+
+    <ras-form-sign-in></ras-form-sign-in>
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container> -->
+
+    <!-- Input Fields START -->
+
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Input Fields'
+        }"
+    ></ng-container>
+
+    <ras-input-field-ui-samples></ras-input-field-ui-samples>
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <!-- Input Fields END -->
+
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Buttons'
+        }"
+    ></ng-container>
+
+    <ras-button-ui-samples></ras-button-ui-samples>
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <!-- ------------------------------------------------------------------------------------------ -->
+
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Modal'
+        }"
+    ></ng-container>
+    <!-- Modal START -->
+    <div class="ras-p-3">
+        <ras-button
+            [color]="themeService.ThemeColor.PRIMARY"
+            class="ras-mx-2"
+            (onClick)="openModal()"
+            >Open Modal</ras-button
+        >
+    </div>
+    <!-- Modal END -->
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <!-- ------------------------------------------------------------------------------------------ -->
+
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Card'
+        }"
+    ></ng-container>
+
+    <!-- Card START -->
+
+    <ras-card-ui-samples></ras-card-ui-samples>
+
+    <!-- Card END -->
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+
+    <ng-container
+        [ngTemplateOutlet]="sampleHeadingTemplate"
+        [ngTemplateOutletContext]="{
+            heading: 'Icon'
+        }"
+    ></ng-container>
+    <ras-icon [icon]="icon"></ras-icon>
+
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+</div>

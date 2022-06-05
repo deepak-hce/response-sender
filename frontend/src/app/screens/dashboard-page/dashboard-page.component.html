@@ -1,0 +1,75 @@
+<div class="ras-d-navbar ras-bg-base-100 ras-sticky ras-top-0 ras-z-50">
+    <div class="ras-d-navbar-start">
+        <a class="ras-d-btn ras-d-btn-ghost ras-normal-case ras-text-xl">RaS</a>
+    </div>
+    <div class="ras-d-navbar-center ras-flex">
+        <div class="ras-d-menu ras-d-menu-horizontal ras-p-0">
+            <ras-button (onClick)="onSignOutClicked()" class="ras-mx-2 ras-my-3"
+                >Sign-Out</ras-button
+            >
+            <ras-button
+                (onClick)="showOnlyUiSamples = !showOnlyUiSamples"
+                class="ras-mx-2 ras-my-3"
+                >{{ showOnlyUiSamples ? "Hide" : "Show" }} Sample</ras-button
+            >
+        </div>
+    </div>
+    <div class="ras-d-navbar-end">
+        <div class="ras-d-dropdown ras-d-dropdown-end">
+            <label tabindex="0" class="ras-d-btn m-1">{{
+                currentTheme ? currentTheme : "Theme"
+            }}</label>
+            <ul
+                tabindex="0"
+                class="ras-d-dropdown-content ras-d-menu ras-p-2 ras-shadow-lg ras-bg-base-100 ras-rounded-box ras-w-52 ras-max-h-48 ras-overflow-y-auto"
+            >
+                <li *ngFor="let theme of themeService.themes">
+                    <a (click)="onThemeChange(theme)">
+                        <span>{{ theme }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>
+<ng-container *ngIf="!showOnlyUiSamples; else uiSamplesRef">
+    <div class="ras-container ras-mx-auto">
+        <!-- <div class="search-bar">
+        <input
+          type="text"
+          [(ngModel)]="searchText"
+          (keyup)="getKeyByValue()"
+          class="form-control"
+          placeholder="Search request here..."
+        />
+      </div> -->
+
+        <ras-card rasCardSuccess [isSimpleBanner]="true" class="ras-w-full">
+            <h3 class="ras-text-center">I am listening.... Ping me!</h3>
+        </ras-card>
+
+        <div *ngFor="let data of objectKeys(filteredRequests)">
+            <ras-card>
+                <ng-template rasCardHead>Request Pending</ng-template>
+                <div class="ras-max-h-60 ras-overflow-auto">
+                    <ngx-json-viewer [json]="requests[data]"></ngx-json-viewer>
+                </div>
+
+                <textarea
+                    placeholder="Write your response here..."
+                    [(ngModel)]="responses[data]"
+                    class="ras-w-full ras-h-28 ras-my-4 ras-p-2 ras-rounded ras-border ras-border-solid ras-border-dark-default ras-shadow-md"
+                >
+                </textarea>
+                <ng-template rasCardFoot extraClass="ras-flex ras-justify-end">
+                    <ras-button rasBtnDark (onClick)="sendResponse(data)"
+                        >Send Response</ras-button
+                    >
+                </ng-template>
+            </ras-card>
+        </div>
+    </div>
+</ng-container>
+<ng-template #uiSamplesRef>
+    <ras-ui-samples></ras-ui-samples>
+</ng-template>

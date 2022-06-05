@@ -1,0 +1,25 @@
+<div
+    class="ras-h-full ras-w-full ras-flex ras-justify-center ras-items-center ras-backdrop-blur ras-bg-black/70"
+    (click)="$event.stopPropagation(); closeModal()"
+>
+    <div
+        class="ras-rounded-lg ras-overflow-hidden ras-bg-light-default"
+        [style.height]="height"
+        [style.width]="width"
+        (click)="$event.stopPropagation()"
+    >
+        <div class="ras-h-full ras-w-full">
+            <ng-container *ngIf="activeResolvedComponentIndex >= 0">
+                <ng-container
+                    *ngComponentOutlet="
+                        resolvedComponents[activeResolvedComponentIndex]
+                            .component;
+                        injector: resolvedComponents[
+                            activeResolvedComponentIndex
+                        ].injector
+                    "
+                ></ng-container>
+            </ng-container>
+        </div>
+    </div>
+</div>

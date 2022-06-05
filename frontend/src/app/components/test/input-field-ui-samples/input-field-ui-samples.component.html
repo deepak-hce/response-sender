@@ -1,0 +1,62 @@
+<ras-input-field
+    class="ras-w-full"
+    type="text"
+    placeholder="Phone Number"
+    label="Phone Number Field"
+></ras-input-field>
+
+<ras-input-field class="ras-w-full" type="password" placeholder="Password">
+    <ng-template #prefix>
+        <ras-icon [icon]="keyIcon"></ras-icon>
+    </ng-template>
+</ras-input-field>
+
+<ras-input-field class="ras-w-full" type="password" placeholder="Password">
+    <ng-template #prefix> Password </ng-template>
+</ras-input-field>
+
+<ras-input-field class="ras-w-full" type="password" placeholder="Password">
+    <ng-template #suffix>
+        <ras-icon [icon]="keyIcon"></ras-icon>
+    </ng-template>
+</ras-input-field>
+
+<ras-input-field class="ras-w-full" type="password" placeholder="Password">
+    <ng-template #prefix>
+        <ras-icon [icon]="userIcon"></ras-icon>
+    </ng-template>
+
+    <ng-template #suffix>
+        <ras-icon [icon]="keyIcon"></ras-icon>
+    </ng-template>
+</ras-input-field>
+
+<!-- COLORED INPUT START -->
+
+<ng-container *ngFor="let colorType of colorEnumList">
+    <ras-input-field
+        class="ras-w-full"
+        type="text"
+        placeholder="Phone Number"
+        [color]="colorType"
+    ></ras-input-field>
+</ng-container>
+
+<ng-container *ngFor="let colorType of colorEnumList">
+    <ras-input-field
+        class="ras-w-full"
+        type="password"
+        placeholder="Password"
+        [color]="colorType"
+    >
+        <ng-template #prefix>
+            <ras-icon [icon]="userIcon"></ras-icon>
+        </ng-template>
+
+        <ng-template #suffix>
+            <ras-icon [icon]="keyIcon"></ras-icon>
+        </ng-template>
+    </ras-input-field>
+</ng-container>
+
+<!-- COLORED INPUT END -->

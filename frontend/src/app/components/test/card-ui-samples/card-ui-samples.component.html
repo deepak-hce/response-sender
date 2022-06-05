@@ -1,0 +1,86 @@
+<!-- Dummy Text START -->
+<ng-template #sampleDummyTextTemplate>
+    <p>
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Voluptatum
+        repellat accusantium veritatis officiis aliquid accusamus velit dolore
+        impedit, nisi consequatur dolorem nam optio veniam tenetur
+    </p>
+</ng-template>
+<!-- Dummy Text END -->
+
+<!-- PRIMARY START -->
+<ras-card rasCardPrimary>
+    <ng-template rasCardHead>Hello World!</ng-template>
+    <ng-container [ngTemplateOutlet]="sampleDummyTextTemplate"></ng-container>
+    <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
+        <ras-button>Button</ras-button>
+        <ras-button>Button</ras-button>
+    </ng-template>
+</ras-card>
+<!-- PRIMARY END -->
+
+<!-- SECONDARY START -->
+<ras-card rasCardSecondary>
+    <ng-template rasCardHead>Hello World!</ng-template>
+    <ng-container [ngTemplateOutlet]="sampleDummyTextTemplate"></ng-container>
+    <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
+        <ras-button rasBtnDark>Button</ras-button>
+        <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
+    </ng-template>
+</ras-card>
+<!-- SECONDARY END -->
+
+<!-- SUCCESS START -->
+<ras-card rasCardSuccess>
+    <ng-template rasCardHead>Hello World!</ng-template>
+    <ng-container [ngTemplateOutlet]="sampleDummyTextTemplate"></ng-container>
+    <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
+        <ras-button rasBtnDark>Button</ras-button>
+        <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
+    </ng-template>
+</ras-card>
+<!-- SUCCESS END -->
+
+<!-- WARNING START -->
+<ras-card rasCardWarning>
+    <ng-template rasCardHead>Hello World!</ng-template>
+    <ng-container [ngTemplateOutlet]="sampleDummyTextTemplate"></ng-container>
+    <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
+        <ras-button rasBtnDark>Button</ras-button>
+        <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
+    </ng-template>
+</ras-card>
+<!-- WARNING END -->
+
+<!-- DANGER START -->
+<ras-card rasCardDanger>
+    <ng-template rasCardHead>Hello World!</ng-template>
+    <ng-container [ngTemplateOutlet]="sampleDummyTextTemplate"></ng-container>
+    <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
+        <ras-button rasBtnDark>Button</ras-button>
+        <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
+    </ng-template>
+</ras-card>
+<!-- DANGER END -->
+
+<!-- LIGHT START -->
+<ras-card>
+    <ng-template rasCardHead>Hello World!</ng-template>
+    <ng-container [ngTemplateOutlet]="sampleDummyTextTemplate"></ng-container>
+    <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
+        <ras-button rasBtnDark>Button</ras-button>
+        <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
+    </ng-template>
+</ras-card>
+<!-- LIGHT END -->
+
+<!-- DARK START -->
+<ras-card rasCardDark>
+    <ng-template rasCardHead>Hello World!</ng-template>
+    <ng-container [ngTemplateOutlet]="sampleDummyTextTemplate"></ng-container>
+    <ng-template rasCardFoot extraClass="ras-flex ras-justify-between">
+        <ras-button rasBtnDark>Button</ras-button>
+        <ras-button rasBtnFilled rasBtnDark>Button</ras-button>
+    </ng-template>
+</ras-card>
+<!-- DARK END -->

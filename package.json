@@ -1,18 +1,23 @@
 {
-  "name": "response-sender",
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "dependencies": {
-    "cors": "^2.8.5",
-    "express": "^4.17.2",
-    "socket.io": "^4.4.1"
-  }
+	"name": "response-sender",
+	"version": "1.0.0",
+	"description": "",
+	"main": "index.js",
+	"scripts": {
+		"start": "node index",
+		"heroku-postbuild": "cd frontend && npm install --also=dev && npm run build",
+		"serve-fe-local": "cd ./frontend && ng serve"
+	},
+	"engines": {
+		"node": "14.18.1",
+		"npm": "6.14.15"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC",
+	"dependencies": {
+		"cors": "^2.8.5",
+		"express": "^4.17.2",
+		"socket.io": "^4.4.1"
+	}
 }
