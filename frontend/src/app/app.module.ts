@@ -14,8 +14,15 @@ import { CustomFormsModule } from './custom-forms/custom-forms.module';
 import { SharedModule } from './shared/shared.module';
 import { LandingPageComponent } from './screens/landing-page/landing-page.component';
 import { DashboardPageComponent } from './screens/dashboard-page/dashboard-page.component';
+import { ButtonUiSamplesComponent } from './components/test/button-ui-samples/button-ui-samples.component';
+import { InputFieldUiSamplesComponent } from './components/test/input-field-ui-samples/input-field-ui-samples.component';
 
-const components = [UiSamplesComponent, CardUiSamplesComponent];
+const components = [
+    UiSamplesComponent,
+    CardUiSamplesComponent,
+    ButtonUiSamplesComponent,
+    InputFieldUiSamplesComponent,
+];
 
 const screens = [LandingPageComponent, DashboardPageComponent];
 

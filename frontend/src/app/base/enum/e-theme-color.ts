@@ -1,10 +1,9 @@
-export enum ECardColorType {
+export enum EThemeColor {
     PRIMARY = 'primary',
     SECONDARY = 'secondary',
+    ACCENT = 'accent',
     SUCCESS = 'success',
     WARNING = 'warning',
-    DANGER = 'danger',
+    ERROR = 'error',
     INFO = 'info',
-    LIGHT = 'light',
-    DARK = 'dark',
 }

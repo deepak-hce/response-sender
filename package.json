@@ -5,7 +5,8 @@
 	"main": "index.js",
 	"scripts": {
 		"start": "node index",
-		"heroku-postbuild": "cd frontend && npm install --also=dev && npm run build"
+		"heroku-postbuild": "cd frontend && npm install --also=dev && npm run build",
+		"serve-fe-local": "cd ./frontend && ng serve"
 	},
 	"engines": {
 		"node": "14.18.1",

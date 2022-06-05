@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { io } from 'socket.io-client';
 import { AuthService } from 'src/app/services/auth/auth.service';
+import { RasThemeService } from 'src/app/services/ras-theme/ras-theme.service';
 import { environment } from 'src/environments/environment';
 
 @Component({
@@ -13,6 +14,8 @@ export class DashboardPageComponent implements OnInit {
     // To view only Ui samples used
     showOnlyUiSamples: boolean = false;
 
+    currentTheme: string | null = null;
+
     title = 'response-sender-client';
     requests: any = {};
     filteredRequests: any = {};
@@ -21,7 +24,11 @@ export class DashboardPageComponent implements OnInit {
     searchText = '';
     objectKeys = Object.keys;
 
-    constructor(private authService: AuthService, private router: Router) {}
+    constructor(
+        private authService: AuthService,
+        private router: Router,
+        public themeService: RasThemeService
+    ) {}
 
     ngOnInit() {
         this.socketInstance = io(environment.socketPort, {
@@ -68,5 +75,13 @@ export class DashboardPageComponent implements OnInit {
     onSignOutClicked() {
         this.authService.logout();
         this.router.navigate(['/']);
+    }
+
+    onThemeChange(selectedTheme: string) {
+        const html = document.getElementsByTagName('html');
+        if (html && html.length) {
+            html[0].dataset.theme = selectedTheme;
+            this.currentTheme = selectedTheme;
+        }
     }
 }

@@ -1,10 +1,10 @@
 import { Component, Injector, OnInit } from '@angular/core';
 import { DomInjectedData } from 'src/app/base/class/dom/dom-injected-data';
-import { EModalComponent } from 'src/app/base/enum/modal/e-modal-component';
-import { EModalPosition } from 'src/app/base/enum/modal/e-modal-position';
-import { IModalInput } from 'src/app/base/interface/modal/i-modal-input';
 import { ModalComponentMap } from '../../class/modal-component-map';
 import { ModalInjectedData } from '../../class/modal-injected-data';
+import { EModalComponent } from '../../enum/e-modal-component';
+import { EModalPosition } from '../../enum/e-modal-position';
+import { IModalInput } from '../../interface/i-modal-input';
 import { ModalService } from '../../service/modal/modal.service';
 
 @Component({

@@ -1,13 +1,36 @@
-<div class="ras-p-4 ras-flex ras-justify-center ras-w-full rasc-shadow-2">
-    <ras-button rasBtnDanger (onClick)="onSignOutClicked()" class="ras-mx-2"
-        >Sign-Out</ras-button
-    >
-    <ras-button
-        rasBtnWarning
-        (onClick)="showOnlyUiSamples = !showOnlyUiSamples"
-        class="ras-mx-2"
-        >Show Sample</ras-button
-    >
+<div class="ras-d-navbar ras-bg-base-100 ras-sticky ras-top-0 ras-z-50">
+    <div class="ras-d-navbar-start">
+        <a class="ras-d-btn ras-d-btn-ghost ras-normal-case ras-text-xl">RaS</a>
+    </div>
+    <div class="ras-d-navbar-center ras-flex">
+        <div class="ras-d-menu ras-d-menu-horizontal ras-p-0">
+            <ras-button (onClick)="onSignOutClicked()" class="ras-mx-2 ras-my-3"
+                >Sign-Out</ras-button
+            >
+            <ras-button
+                (onClick)="showOnlyUiSamples = !showOnlyUiSamples"
+                class="ras-mx-2 ras-my-3"
+                >{{ showOnlyUiSamples ? "Hide" : "Show" }} Sample</ras-button
+            >
+        </div>
+    </div>
+    <div class="ras-d-navbar-end">
+        <div class="ras-d-dropdown ras-d-dropdown-end">
+            <label tabindex="0" class="ras-d-btn m-1">{{
+                currentTheme ? currentTheme : "Theme"
+            }}</label>
+            <ul
+                tabindex="0"
+                class="ras-d-dropdown-content ras-d-menu ras-p-2 ras-shadow-lg ras-bg-base-100 ras-rounded-box ras-w-52 ras-max-h-48 ras-overflow-y-auto"
+            >
+                <li *ngFor="let theme of themeService.themes">
+                    <a (click)="onThemeChange(theme)">
+                        <span>{{ theme }}</span>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
 </div>
 <ng-container *ngIf="!showOnlyUiSamples; else uiSamplesRef">
     <div class="ras-container ras-mx-auto">

@@ -12,8 +12,7 @@ export class AuthService {
         let isUserLoggedIn = false;
         if (loginData && loginData.email && loginData.password) {
             isUserLoggedIn =
-                loginData.email == 'admin@qzoz.in' &&
-                loginData.password == '123';
+                loginData.email == 'a@b.cd' && loginData.password == '123';
             localStorage.setItem(
                 'isUserLoggedIn',
                 isUserLoggedIn ? 'true' : 'false'

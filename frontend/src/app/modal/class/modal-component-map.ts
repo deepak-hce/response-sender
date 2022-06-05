@@ -1,5 +1,5 @@
-import { EModalComponent } from 'src/app/base/enum/modal/e-modal-component';
 import { SampleComponent } from '../components/test/sample/sample.component';
+import { EModalComponent } from '../enum/e-modal-component';
 
 export class ModalComponentMap {
     static getComponent(component: EModalComponent) {

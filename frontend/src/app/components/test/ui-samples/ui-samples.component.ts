@@ -3,6 +3,7 @@ import { EIconSize } from 'src/app/base/enum/icon/e-icon-size';
 import { IIcon } from 'src/app/base/interface/icon/i-icon';
 import { RasFaIcons } from 'src/app/constants/fa-library';
 import { ModalService } from 'src/app/modal/service/modal/modal.service';
+import { RasThemeService } from 'src/app/services/ras-theme/ras-theme.service';
 
 @Component({
     selector: 'ras-ui-samples',
@@ -23,7 +24,10 @@ export class UiSamplesComponent implements OnInit {
         icon: RasFaIcons.faKey,
     };
 
-    constructor(private modalService: ModalService) {}
+    constructor(
+        private modalService: ModalService,
+        public themeService: RasThemeService
+    ) {}
 
     ngOnInit(): void {}
 

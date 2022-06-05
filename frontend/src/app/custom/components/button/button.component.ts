@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
-import { EButtonColorType } from 'src/app/base/enum/button/e-button-color-type';
-import { EButtonType } from 'src/app/base/enum/button/e-button-type';
+import { EThemeColor } from 'src/app/base/enum/e-theme-color';
+import { RasThemeService } from 'src/app/services/ras-theme/ras-theme.service';
 
 @Component({
     selector: 'ras-button',
@@ -8,18 +8,33 @@ import { EButtonType } from 'src/app/base/enum/button/e-button-type';
     styleUrls: ['./button.component.sass'],
 })
 export class ButtonComponent implements OnInit {
-    buttonType: EButtonType = EButtonType.STROKED;
-    buttonColorType: EButtonColorType = EButtonColorType.DARK;
+    @Input('color')
+    buttonColorType: EThemeColor | null = null;
 
-    EButtonColorType = EButtonColorType;
-    EButtonType = EButtonType;
+    @Input('type')
+    buttonType: 'outline' | 'link' | 'glass' | 'ghost' | null = null;
 
     @Input('size')
-    buttonSize: 'lg' | 'sm' | null = null;
+    buttonSize: 'lg' | 'sm' | 'xs' | 'md' = 'md';
+
+    @Input('shape')
+    buttonShape: 'square' | 'circle' | 'block' | 'wide' | null = null;
+
+    @Input('loader')
+    isLoading: boolean = false;
+
+    @Input('noAnimation')
+    noAnimation: boolean = false;
+
+    @Input('disabled')
+    disabled: boolean = false;
+
+    @Input('active')
+    active: boolean = false;
 
     @Output('onClick') clicked = new EventEmitter<any>();
 
-    constructor() {}
+    constructor(public themeService: RasThemeService) {}
 
     ngOnInit(): void {}
 }

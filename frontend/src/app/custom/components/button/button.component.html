@@ -1,15 +1,37 @@
 <button
-    class="ras-w-full ras-rounded ras-border ras-border-solid ras-ease-linear ras-duration-200 rasc-btn-{{
-        buttonType
-    }} rasc-btn-{{ buttonColorType }}"
+    class="ras-d-btn"
     [ngClass]="{
-        'ras-py-2 ras-px-5 ras-text-lg': buttonSize === 'lg',
-        'ras-py-1 ras-px-3 ras-text-sm': buttonSize === 'sm',
-        'ras-py-1 ras-px-4 ras-text-base': buttonSize === null
+        'ras-d-btn-primary':
+            themeService.ThemeColor.PRIMARY === buttonColorType,
+        'ras-d-btn-secondary':
+            themeService.ThemeColor.SECONDARY === buttonColorType,
+        'ras-d-btn-accent': themeService.ThemeColor.ACCENT === buttonColorType,
+        'ras-d-btn-success':
+            themeService.ThemeColor.SUCCESS === buttonColorType,
+        'ras-d-btn-warning':
+            themeService.ThemeColor.WARNING === buttonColorType,
+        'ras-d-btn-error': themeService.ThemeColor.ERROR === buttonColorType,
+        'ras-d-btn-info': themeService.ThemeColor.INFO === buttonColorType,
+        'ras-d-btn-lg': buttonSize === 'lg',
+        'ras-d-btn-sm': buttonSize === 'sm',
+        'ras-d-btn-xs': buttonSize === 'xs',
+        'ras-d-btn-md': buttonSize === 'md',
+        'ras-d-btn-outline': buttonType === 'outline',
+        'ras-d-btn-link': buttonType === 'link',
+        'ras-d-glass': buttonType === 'glass',
+        'ras-d-btn-ghost': buttonType === 'ghost',
+        'ras-d-btn-square': buttonShape === 'square',
+        'ras-d-btn-circle': buttonShape === 'circle',
+        'ras-d-btn-block': buttonShape === 'block',
+        'ras-d-btn-wide': buttonShape === 'wide',
+        'ras-d-btn-disabled': disabled,
+        'ras-d-btn-active': active,
+        'ras-d-no-animation': noAnimation,
+        'ras-d-loading': isLoading
     }"
     (click)="clicked.emit($event)"
 >
-    <span class="ras-mx-1 ras-whitespace-nowrap">
+    <span class="ras-whitespace-nowrap">
         <ng-content></ng-content>
     </span>
 </button>

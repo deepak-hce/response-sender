@@ -1,23 +1,20 @@
 <!-- Heading Template START-->
 <ng-template #sampleHeadingTemplate let-heading="heading">
-    <div
-        class="ras-py-3 ras-px-4 ras-mb-4 ras-border-b-2 ras-border-solid ras-border-secondary-default"
-    >
+    <div class="ras-py-3 ras-px-4 ras-mb-4">
         {{ heading }}
     </div>
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
 </ng-template>
 <!-- Heading Template END-->
 
 <!-- Divider Template START-->
 <ng-template #sampleDividerTemplate>
-    <div
-        class="ras-my-4 ras-border-b-2 ras-border-solid ras-border-secondary-default"
-    ></div>
+    <div class="ras-d-divider"></div>
 </ng-template>
 <!-- Divider Template END-->
 
 <div class="ras-w-full ras-bg-common ras-mx-auto">
-    <ng-container
+    <!-- <ng-container
         [ngTemplateOutlet]="sampleHeadingTemplate"
         [ngTemplateOutletContext]="{
             heading: 'Forms'
@@ -26,7 +23,7 @@
 
     <ras-form-sign-in></ras-form-sign-in>
 
-    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
+    <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container> -->
 
     <!-- Input Fields START -->
 
@@ -37,18 +34,7 @@
         }"
     ></ng-container>
 
-    <ras-input-field
-        class="ras-w-full"
-        type="email"
-        placeholder="Email"
-    ></ras-input-field>
-    <ras-input-field
-        class="ras-w-full"
-        type="password"
-        placeholder="Password"
-        [prefixIcon]="keyIcon"
-        [suffixIcon]="keyIcon"
-    ></ras-input-field>
+    <ras-input-field-ui-samples></ras-input-field-ui-samples>
 
     <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
 
@@ -61,43 +47,8 @@
         }"
     ></ng-container>
 
-    <!-- STROKED Buttons START -->
-    <div class="ras-p-3">
-        <ras-button rasBtnPrimary class="ras-mx-2">Button</ras-button>
-        <ras-button rasBtnSecondary class="ras-mx-2">Button</ras-button>
-        <ras-button rasBtnSuccess class="ras-mx-2">Button</ras-button>
-        <ras-button rasBtnWarning class="ras-mx-2">Button</ras-button>
-        <ras-button rasBtnDanger class="ras-mx-2">Button</ras-button>
-        <ras-button rasBtnInfo class="ras-mx-2">Button</ras-button>
-        <ras-button rasBtnLight class="ras-mx-2">Button</ras-button>
-        <ras-button rasBtnDark class="ras-mx-2">Button</ras-button>
-    </div>
-    <!-- STROKED Buttons END -->
+    <ras-button-ui-samples></ras-button-ui-samples>
 
-    <!-- FILLED Button START -->
-    <div class="ras-p-3">
-        <ras-button rasBtnFilled rasBtnPrimary class="ras-mx-2"
-            >Button</ras-button
-        >
-        <ras-button rasBtnFilled rasBtnSecondary class="ras-mx-2"
-            >Button</ras-button
-        >
-        <ras-button rasBtnFilled rasBtnSuccess class="ras-mx-2"
-            >Button</ras-button
-        >
-        <ras-button rasBtnFilled rasBtnWarning class="ras-mx-2"
-            >Button</ras-button
-        >
-        <ras-button rasBtnFilled rasBtnDanger class="ras-mx-2"
-            >Button</ras-button
-        >
-        <ras-button rasBtnFilled rasBtnInfo class="ras-mx-2">Button</ras-button>
-        <ras-button rasBtnFilled rasBtnLight class="ras-mx-2"
-            >Button</ras-button
-        >
-        <ras-button rasBtnFilled rasBtnDark class="ras-mx-2">Button</ras-button>
-    </div>
-    <!-- FILLED Button END -->
     <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
 
     <!-- ------------------------------------------------------------------------------------------ -->
@@ -110,7 +61,10 @@
     ></ng-container>
     <!-- Modal START -->
     <div class="ras-p-3">
-        <ras-button rasBtnSecondary class="ras-mx-2" (onClick)="openModal()"
+        <ras-button
+            [color]="themeService.ThemeColor.PRIMARY"
+            class="ras-mx-2"
+            (onClick)="openModal()"
             >Open Modal</ras-button
         >
     </div>
@@ -140,7 +94,7 @@
             heading: 'Icon'
         }"
     ></ng-container>
-    <ng-template rasIcon [icon]="icon"></ng-template>
+    <ras-icon [icon]="icon"></ras-icon>
 
     <ng-container [ngTemplateOutlet]="sampleDividerTemplate"></ng-container>
 </div>

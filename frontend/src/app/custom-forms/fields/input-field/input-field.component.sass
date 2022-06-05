@@ -1,30 +1,5 @@
 :host
     display: block
-    
-    &.rasc-focused
-        .rasc-input-field
-            --shadowColorVar: var(--primaryVar)
-            --shadowColorLightness: var(--primaryLightness)
 
-    &.ng-touched, &.ng-dirty
-        &.ng-invalid
-            .rasc-input-field
-                --shadowColorVar: var(--dangerVar)
-                --shadowColorLightness: var(--dangerLightness)
-
-            .rasc-input, .rasc-input-suffix-icon, .rasc-input-prefix-icon
-                @apply ras-border-danger-default
-
-            .rasc-input-suffix-icon, .rasc-input-prefix-icon
-                @apply ras-text-light-default ras-bg-danger-default
-
-        &.ng-valid
-            .rasc-input-field
-                --shadowColorVar: var(--successVar)
-                --shadowColorLightness: var(--successLightness)
-
-            .rasc-input, .rasc-input-suffix-icon, .rasc-input-prefix-icon
-                @apply ras-border-success-default
-            
-            .rasc-input-suffix-icon, .rasc-input-prefix-icon
-                @apply ras-text-light-default ras-bg-success-default
+    .rasc-rounded
+        border-radius: var(--rounded-btn, 0.5rem)

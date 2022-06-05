@@ -14,22 +14,26 @@
         placeholder="Email"
         [formControlName]="EMAIL_FIELD"
         size="lg"
-        [prefixIcon]="userIcon"
         [currentFormControl]="signInForm.get(EMAIL_FIELD)"
-    ></ras-input-field>
+    >
+        <ng-template #prefix>
+            <ras-icon [icon]="userIcon"></ras-icon>
+        </ng-template>
+    </ras-input-field>
 
     <ras-input-field
         type="password"
         placeholder="Password"
         [formControlName]="PASSWORD_FIELD"
         size="lg"
-        [prefixIcon]="keyIcon"
         [currentFormControl]="signInForm.get(PASSWORD_FIELD)"
-    ></ras-input-field>
+    >
+        <ng-template #prefix>
+            <ras-icon [icon]="keyIcon"></ras-icon>
+        </ng-template>
+    </ras-input-field>
 
     <div class="ras-px-4 ras-py-2">
-        <ras-button rasBtnFilled rasBtnPrimary class="ras-w-full" size="lg"
-            >Sign In</ras-button
-        >
+        <ras-button class="ras-w-full" shape="block">Sign In</ras-button>
     </div>
 </form>

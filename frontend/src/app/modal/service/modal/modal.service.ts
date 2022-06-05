@@ -1,8 +1,8 @@
-import { EModalComponent } from './../../../base/enum/modal/e-modal-component';
 import { Injectable } from '@angular/core';
-import { IModalInput } from 'src/app/base/interface/modal/i-modal-input';
 import { DomManagerService } from 'src/app/services/dom-manager/dom-manager.service';
 import { ModalComponent } from '../../components/modal/modal.component';
+import { EModalComponent } from '../../enum/e-modal-component';
+import { IModalInput } from '../../interface/i-modal-input';
 
 @Injectable({
     providedIn: 'root',

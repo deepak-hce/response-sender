@@ -14,7 +14,7 @@ import { FaIconComponent } from '@fortawesome/angular-fontawesome';
 import { IIcon } from 'src/app/base/interface/icon/i-icon';
 
 @Directive({
-    selector: '[rasIcon]',
+    selector: 'ras-icon,[rasIcon]',
 })
 export class IconDirective implements OnInit, OnDestroy {
     @Input('icon') iconData: IIcon | null = null;

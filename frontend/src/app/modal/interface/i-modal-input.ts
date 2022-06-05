@@ -1,4 +1,4 @@
-import { EModalPosition } from '../../enum/modal/e-modal-position';
+import { EModalPosition } from 'src/app/modal/enum/e-modal-position';
 import { IModalRenderDetail } from './i-modal-render-detail';
 
 export interface IModalInput {
